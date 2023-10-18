@@ -1,7 +1,6 @@
+############################################################################
 <script> document.getElementByID("targeted demo").innerHTML = "text here ";</script>
 --> is to changed the target to specific text
-
-
 --------------------------------------------------------------------------
 <!DOCTYPE html>
 <html>
@@ -48,4 +47,14 @@ function myFunction() {
   document.getElementById("demo").innerHTML = "Paragraph changed.";
 }
 
---------------------------------------------------------------------------
+############################################################################
+Displaying properties important 
+  
+.innerHTML is writing to the inner HTML element
+
+document.write() is writing to HTML output  - rewrite the whole page  Using document.write() after a document is loaded, deletes all existing HTML
+
+Writing into an alert box, using window.alert().
+
+Writing into the browser console, using console.log().
+
