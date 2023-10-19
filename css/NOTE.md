@@ -7,3 +7,9 @@ p{
     font-family: xxx;
     font-size: ?? px; 
 }
+
+should you have id ( remember to put #id)
+#para1{
+    text-align:center;
+    color:blueviolet;
+}
