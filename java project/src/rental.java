@@ -29,8 +29,17 @@ public class rental {
     //water bill
     private double water_bill;
 
-    public rental(){
+    public rental(int electric_used_kwH, double bil_total_elec){
+        this.bil_total_elec = bil_total_elec;
+        this.electric_used_kwH = electric_used_kwH;
+    }
 
+    public double get_Elec_rate(int electric_used_kwH,double bil_total_electric_used){
+        return bil_total_elec/electric_used_kwH;
+    }
+
+    public void elec_in(double bil_total_elec){
+        this.bil_total_elec = bil_total_elec;
     }
 
     
