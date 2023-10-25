@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPS Speedometer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        #speedometer {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin: 20px;
+        }
+
+        #speed, #averageSpeed, #odometer, #currentTime {
+            font-size: 24px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="speedometer">
+        <div id="speed">Speed: <span id="speedValue">0</span> km/h</div>
+        <div id="averageSpeed">Average Speed: <span id="averageSpeedValue">0</span> km/h</div>
+        <div id="odometer">Odometer: <span id="odometerValue">0</span> km</div>
+        <div id="currentTime">Current Time: <span id="timeValue">-</span></div>
+    </div>
+    <script>
+        let speedValue = 0;
+        let totalDistance = 0;
+        let startTime = 0;
+        let previousTime = 0;
+        let averageSpeedValue = 0;
+
+        function updateSpeed(speed) {
+            document.getElementById('speedValue').textContent = speed.toFixed(2);
+        }
+
+        function updateAverageSpeed(distance, time) {
+            const averageSpeed = (distance / (time / 3600)) || 0;
+            document.getElementById('averageSpeedValue').textContent = averageSpeed.toFixed(2);
+        }
+
+        function updateOdometer(distance) {
+            totalDistance += distance;
+            document.getElementById('odometerValue').textContent = totalDistance.toFixed(2);
+        }
+
+        function updateTime() {
+            const currentTime = new Date().toLocaleTimeString();
+            document.getElementById('timeValue').textContent = currentTime;
+        }
+
+        if ("geolocation" in navigator) {
+            navigator.geolocation.watchPosition(function(position) {
+                const speed = position.coords.speed || 0;
+                const currentTime = Date.now();
+
+                if (startTime === 0) {
+                    startTime = currentTime;
+                } else {
+                    const deltaTime = (currentTime - previousTime) / 1000; // Convert to seconds
+                    updateAverageSpeed(totalDistance, currentTime - startTime);
+                    updateOdometer(speed * deltaTime / 3600);
+                }
+
+                updateSpeed(speed);
+                previousTime = currentTime;
+
+                // Update the time every second
+                setInterval(updateTime, 1000);
+            });
+        }
+    </script>
+</body>
+</html>
