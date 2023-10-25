@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+#speedometer {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 20px;
+}
+
+#speed, #averageSpeed, #odometer, #currentTime {
+    font-size: 24px;
+    margin: 10px;
+}
