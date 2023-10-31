@@ -41,6 +41,7 @@ public class RentalLogin{
     JButton clearAllButton = new JButton("Clear All");                                                         // Clear Button
     JButton resultButton = new JButton("Result");                                                              // Result Button
 
+
     public RentalLogin(){
         previousMonthInstruct.setLocation(20,5);
         previousMonthInstruct.setSize(340, 40);
@@ -135,6 +136,23 @@ public class RentalLogin{
                     // Display an error message if one of the field is not filled or all fields are not filled
                     JOptionPane.showMessageDialog(frame, "Please make sure that all fields are filled.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+
+        clearAllButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Clear the text in all text fields
+                previousElecUsedField.setText("");
+                previousElecBillField.setText("");
+                previousSmallRoomMeterField.setText("");
+                previousMediumRoomMeterField.setText("");
+                previousMasterRoomMeterField.setText("");
+                currentElecUsedField.setText("");
+                currentElecBillField.setText("");
+                currentSmallRoomMeterField.setText("");
+                currentMediumRoomMeterField.setText("");
+                currentMasterRoomMeterField.setText("");
             }
         });
     }
