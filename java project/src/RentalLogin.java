@@ -13,28 +13,14 @@ public class RentalLogin{
     
 
     JTextField previousSmallRoomMeterField = new JTextField();                                                      // TextField for small room electricity used in previous month
-    JLabel previousSmallRoomMeterlbl = new JLabel("Previous Small Room Meter");                               // Small Room Meter label
+    JLabel previousSmallRoomMeterlbl = new JLabel("Previous Small Room Meter");                                // Small Room Meter label
     
-    JLabel previousMediumRoomMeter = new JLabel();   // Medium Room Meter
-    JTextField previousMediumRoomMeterField = new JTextField();
-    JLabel previousMediumRoomElectricUsed = new JLabel();
-    JLabel previousMediumRoomPriceToPay = new JLabel();
+    JLabel previousMediumRoomMeterlbl = new JLabel("Previous Medium Room Meter");                              // Medium Room Meter
+    JTextField previousMediumRoomMeterField = new JTextField();                                                     // TextField for medium room electricity used in previous month
     
-    JLabel previousMediumRoomMeterlbl = new JLabel("Previous Medium Room Meter");   // Medium Room Meter label
-    JTextField previousMediumRoomMeterFieldlbl = new JTextField();
-    JLabel previousMediumRoomElectricUsedlbl = new JLabel();
-    JLabel previousMediumRoomPriceToPaylbl = new JLabel();
-
-    JLabel previousMasterRoomMeter = new JLabel();   // Master Room Meter
-    JTextField previousMasterRoomMeterField = new JTextField();
-    JLabel previousMasterRoomElectricUsed = new JLabel();
-    JLabel previousMasterRoomPriceToPay = new JLabel();
-
-    JLabel previousMasterRoomMeterlbl = new JLabel("Previous Master Room Meter");   // Master Room Meter label
-    JTextField previousMasterRoomMeterFieldlbl = new JTextField();
-    JLabel previousMasterRoomElectricUsedlbl = new JLabel();
-    JLabel previousMasterRoomPriceToPaylbl = new JLabel();
-
+    JLabel previousMasterRoomMeterlbl = new JLabel("Previous Master Room Meter");                              // Master Room Meter
+    JTextField previousMasterRoomMeterField = new JTextField();                                                     // TextField for master room electricity used in previous month
+  
     JLabel currentsMonthInstruct = new JLabel("Please enter current month electric bill information here");
     JLabel currentElecUsed = new JLabel();          // Current month electric bill
     JTextField currentElecUsedField = new JTextField();
@@ -84,15 +70,28 @@ public class RentalLogin{
     public RentalLogin(){
         previousMonthInstruct.setLocation(20,5);
         previousMonthInstruct.setSize(340, 40);
-        previousElecUsedlbl.setLocation(180, 110);
+        previousElecUsedlbl.setLocation(130, 110);
         previousElecUsedlbl.setSize(290, 40);
-        previousElecUsedField.setLocation(120,70);
+        previousElecUsedField.setLocation(80,70);
         previousElecUsedField.setSize(290,40);
-        previousElecBillField.setLocation();
-        previousElecBilllbl.setLocation(460,40);
+        previousElecBillField.setLocation(400,70);
+        previousElecBillField.setSize(290,40);
+        previousElecBilllbl.setLocation(460,110);
         previousElecBilllbl.setSize(210,40);
-        previousSmallRoomMeterField.setLocation(600,110);
+        previousSmallRoomMeterField.setLocation(820,70);
         previousSmallRoomMeterField.setSize(290,40);
+        previousSmallRoomMeterlbl.setLocation(900,110);
+        previousSmallRoomMeterlbl.setSize(200,40);
+        previousMediumRoomMeterField.setLocation(1150,70);
+        previousMediumRoomMeterField.setSize(290,40);
+        previousMediumRoomMeterlbl.setLocation(1200,110);
+        previousMediumRoomMeterlbl.setSize(200,40);
+        previousMasterRoomMeterlbl.setLocation(1530,110);
+        previousMasterRoomMeterlbl.setSize(200,40);
+        previousMasterRoomMeterField.setLocation(1470,70); 
+        previousMasterRoomMeterField.setSize(290,40);
+        
+
         clearAllButton.setLocation(1350,550);
         clearAllButton.setSize(100,40);
         resultButton.setLocation(1500,550);
@@ -104,7 +103,13 @@ public class RentalLogin{
         panel.add(previousElecUsedlbl);
         panel.add(previousElecBilllbl);
         panel.add(previousElecUsedField);
-        panel.add(previousSmallRoomMeterField);
+        panel.add(previousElecBillField);
+        panel.add(previousSmallRoomMeterlbl);
+        panel.add(previousSmallRoomMeterField); 
+        panel.add(previousMediumRoomMeterField);
+        panel.add(previousMediumRoomMeterlbl);
+        panel.add(previousMasterRoomMeterlbl);
+        panel.add(previousMasterRoomMeterField);
         panel.add(resultButton);
         panel.add(clearAllButton);
         frame.add(panel);
