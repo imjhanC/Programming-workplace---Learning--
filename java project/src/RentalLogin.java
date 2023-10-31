@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.JTextField;
+import java.awt.event.*;
 
 public class RentalLogin{
     JFrame frame = new JFrame("Rental Bill Calculator ");
@@ -20,52 +20,26 @@ public class RentalLogin{
     
     JLabel previousMasterRoomMeterlbl = new JLabel("Previous Master Room Meter");                              // Master Room Meter
     JTextField previousMasterRoomMeterField = new JTextField();                                                     // TextField for master room electricity used in previous month
-  
+    //current month
     JLabel currentsMonthInstruct = new JLabel("Please enter current month electric bill information here");
-    JLabel currentElecUsed = new JLabel();          // Current month electric bill
-    JTextField currentElecUsedField = new JTextField();
-    JLabel currentElecBill = new JLabel();
-    JLabel currentElecRate = new JLabel();
-    JLabel currentCommonAreameter = new JLabel();   //Common Area Meter
-
-    JLabel currentElecUsedlabel = new JLabel();          // Current month electric bill label
-    JTextField currentElecUsedFieldlabel = new JTextField();
-    JLabel currentElecBilllabel = new JLabel();
-    JLabel currentElecRatelabel = new JLabel();
-    JLabel currentCommonAreameterlabel = new JLabel();   //Common Area Meter
-
-    JLabel currentSmallRoomMeter = new JLabel();    // Small Room Meter
-    JTextField currentSmallRoomMeterField = new JTextField();
-    JLabel currentSmallRoomElectricUsed = new JLabel();
-    JLabel currentSmallRoomPriceToPay = new JLabel();
-
-    JLabel currentSmallRoomMeterlbl = new JLabel();    // Small Room Meter label
-    JTextField currentSmallRoomMeterFieldlbl = new JTextField();
-    JLabel currentSmallRoomElectricUsedlbl = new JLabel();
-    JLabel currentSmallRoomPriceToPaylbl = new JLabel();
-
-    JLabel currentMediumRoomMeter = new JLabel();   // Medium Room Meter
-    JTextField currentMediumRoomMeterField = new JTextField();
-    JLabel currentMediumRoomElectricUsed = new JLabel();
-    JLabel currentMediumRoomPriceToPay = new JLabel();
-
-    JLabel currentMediumRoomMeterlbl = new JLabel();   // Medium Room Meter label
-    JTextField currentMediumRoomMeterFieldlbl = new JTextField();
-    JLabel currentMediumRoomElectricUsedlbl = new JLabel();
-    JLabel currentMediumRoomPriceToPaylbl = new JLabel();
+    JTextField currentElecUsedField = new JTextField();                                                             // Textfield for electric used in current month
+    JTextField currentElecBillField = new JTextField();                                                             // TextField for electric bill in RM in current month
+    JLabel currentElecUsedlbl = new JLabel("Current Electric Used (kWH)");                                     // current month electricity used  label 
+    JLabel currentElecBilllbl = new JLabel("Current Electric Bill in RM");                                     // current month elctric bill in RM label
     
-    JLabel currentMasterRoomMeter = new JLabel();   // Master Room Meter
-    JTextField currentMasterRoomMeterField = new JTextField();
-    JLabel currentMasterRoomElectricUsed = new JLabel();
-    JLabel currentMasterRoomPriceToPay = new JLabel();
 
-    JLabel currentMasterRoomMeterlbl = new JLabel();   // Master Room Meter label
-    JTextField currentMasterRoomMeterFieldlbl = new JTextField();
-    JLabel currentMasterRoomElectricUsedlbl = new JLabel();
-    JLabel currentMasterRoomPriceToPaylbl = new JLabel();
+    JTextField currentSmallRoomMeterField = new JTextField();                                                       // TextField for small room electricity used in current month
+    JLabel currentSmallRoomMeterlbl = new JLabel("Current Small Room Meter");                                  // Small Room Meter label
+    
+    JLabel currentMediumRoomMeterlbl = new JLabel("Current Medium Room Meter");                                // Medium Room Meter
+    JTextField currentMediumRoomMeterField = new JTextField();                                                      // TextField for medium room electricity used in current month
+    
+    JLabel currentMasterRoomMeterlbl = new JLabel("Current Master Room Meter");                                // Master Room Meter
+    JTextField currentMasterRoomMeterField = new JTextField();                                                      // TextField for master room electricity used in current month
+    
 
-    JButton clearAllButton = new JButton("Clear All");  //Clear Button
-    JButton resultButton = new JButton("Result");       //Result Button
+    JButton clearAllButton = new JButton("Clear All");                                                         // Clear Button
+    JButton resultButton = new JButton("Result");                                                              // Result Button
 
     public RentalLogin(){
         previousMonthInstruct.setLocation(20,5);
@@ -90,6 +64,28 @@ public class RentalLogin{
         previousMasterRoomMeterlbl.setSize(200,40);
         previousMasterRoomMeterField.setLocation(1470,70); 
         previousMasterRoomMeterField.setSize(290,40);
+        currentsMonthInstruct.setLocation(20,250);
+        currentsMonthInstruct.setSize(340,40);
+        currentElecUsedField.setLocation(80,310);
+        currentElecUsedField.setSize(290,40);
+        currentElecUsedlbl.setLocation(130,350);
+        currentElecUsedlbl.setSize(290,40);
+        currentElecBillField.setLocation(400,310);
+        currentElecBillField.setSize(290,40);
+        currentElecBilllbl.setLocation(460,350);
+        currentElecBilllbl.setSize(290,40);
+        currentSmallRoomMeterField.setLocation(820,310);
+        currentSmallRoomMeterField.setSize(290,40);
+        currentSmallRoomMeterlbl.setLocation(900,350);
+        currentSmallRoomMeterlbl.setSize(200,40);
+        currentMediumRoomMeterField.setLocation(1150,310);
+        currentMediumRoomMeterField.setSize(290,40);
+        currentMediumRoomMeterlbl.setLocation(1200,350);
+        currentMediumRoomMeterlbl.setSize(200,40);
+        currentMasterRoomMeterField.setLocation(1470,310);
+        currentMasterRoomMeterField.setSize(290,40);
+        currentMasterRoomMeterlbl.setLocation(1530,350);
+        currentMasterRoomMeterlbl.setSize(200,40);
         
 
         clearAllButton.setLocation(1350,550);
@@ -110,6 +106,17 @@ public class RentalLogin{
         panel.add(previousMediumRoomMeterlbl);
         panel.add(previousMasterRoomMeterlbl);
         panel.add(previousMasterRoomMeterField);
+        panel.add(currentsMonthInstruct);
+        panel.add(currentElecUsedField);
+        panel.add(currentElecUsedlbl);
+        panel.add(currentElecBillField);
+        panel.add(currentElecBilllbl);
+        panel.add(currentSmallRoomMeterlbl);
+        panel.add(currentSmallRoomMeterField); 
+        panel.add(currentMediumRoomMeterField);
+        panel.add(currentMediumRoomMeterlbl);
+        panel.add(currentMasterRoomMeterlbl);
+        panel.add(currentMasterRoomMeterField);
         panel.add(resultButton);
         panel.add(clearAllButton);
         frame.add(panel);
@@ -118,7 +125,34 @@ public class RentalLogin{
         frame.setDefaultCloseOperation(3);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
+
+        resultButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (areAllFieldsFilled()) {
+                    // Perform your calculation or display the result if the condition is satisfied
+                } else {
+                    // Display an error message if one of the field is not filled or all fields are not filled
+                    JOptionPane.showMessageDialog(frame, "Please make sure that all fields are filled.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
     }
+
+    private boolean areAllFieldsFilled() {
+        // Check all the text fields for empty values
+        return !previousElecUsedField.getText().isEmpty() &&
+               !previousElecBillField.getText().isEmpty() &&
+               !previousSmallRoomMeterField.getText().isEmpty() &&
+               !previousMediumRoomMeterField.getText().isEmpty() &&
+               !previousMasterRoomMeterField.getText().isEmpty() &&
+               !currentElecUsedField.getText().isEmpty() &&
+               !currentElecBillField.getText().isEmpty() &&
+               !currentSmallRoomMeterField.getText().isEmpty() &&
+               !currentMediumRoomMeterField.getText().isEmpty() &&
+               !currentMasterRoomMeterField.getText().isEmpty();
+    }
+
     public static void main(String[] args){
         new RentalLogin();
     }  
