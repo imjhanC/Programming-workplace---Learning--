@@ -121,7 +121,7 @@ public class RentalLogin{
         panel.add(resultButton);
         panel.add(clearAllButton);
         frame.add(panel);
-        frame.setSize(1800,800);
+        frame.setSize(1800,700);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(3);
         frame.setResizable(false);
