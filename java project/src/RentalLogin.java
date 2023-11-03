@@ -175,5 +175,7 @@ public class RentalLogin{
         new RentalLogin();
     }  
     
+    public class resultWindow{
 
+    }
 }
