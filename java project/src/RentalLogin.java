@@ -41,6 +41,23 @@ public class RentalLogin{
     JButton clearAllButton = new JButton("Clear All");                                                         // Clear Button
     JButton resultButton = new JButton("Result");                                                              // Result Button
 
+    double currentelectricUsedKwh;      // current month electric kwh used
+    double previouselectricUsedKwh;     // previous month electric kwh used
+    double currentBillTotal;            // current total bill
+    double previousBillTotal;           // previous total bill
+    double currentElectricRateCal;      // rate
+    double commonAreaMeter;             // common area meter
+    double smallRoomMeterReading;
+    double smallRoomElectricUsed;
+    double priceToPaySmallRoomUsed;
+    double mediumRoomMeterReading;
+    double mediumRoomElectricUsed;
+    double priceToPayMediumRoomUsed;
+    double masterRoomMeterReading;
+    double masterRoomElectricUsed;
+    double masterToPayMediumRoomUsed;
+
+
 
     public RentalLogin(){
         previousMonthInstruct.setLocation(20,5);
@@ -131,7 +148,13 @@ public class RentalLogin{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (areAllFieldsFilled()) {
-                    // Perform your calculation or display the result if the condition is satisfied
+                    previouselectricUsedKwh = Double.parseDouble(previousElecUsedField.getText());
+                    currentelectricUsedKwh = Double.parseDouble(currentElecUsedField.getText());
+                    currentBillTotal = Double.parseDouble(currentElecBillField.getText());
+                    previousBillTotal = Double.parseDouble(previousElecBillField.getText());
+                    smallRoomMeterReading =Double.parseDouble(currentSmallRoomMeterField.getText());
+                    mediumRoomMeterReading=Double.parseDouble(currentMediumRoomMeterField.getText());
+                    masterRoomMeterReading=Double.parseDouble(currentMasterRoomMeterField.getText());
                 } else {
                     // Display an error message if one of the field is not filled or all fields are not filled
                     JOptionPane.showMessageDialog(frame, "Please make sure that all fields are filled.", "Error", JOptionPane.ERROR_MESSAGE);
