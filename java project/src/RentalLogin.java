@@ -41,21 +41,30 @@ public class RentalLogin{
     JButton clearAllButton = new JButton("Clear All");                                                         // Clear Button
     JButton resultButton = new JButton("Result");                                                              // Result Button
 
-    double currentelectricUsedKwh;      // current month electric kwh used
-    double previouselectricUsedKwh;     // previous month electric kwh used
-    double currentBillTotal;            // current total bill
-    double previousBillTotal;           // previous total bill
-    double currentElectricRateCal;      // rate
-    double commonAreaMeter;             // common area meter
-    double smallRoomMeterReading;
-    double smallRoomElectricUsed;
-    double priceToPaySmallRoomUsed;
-    double mediumRoomMeterReading;
-    double mediumRoomElectricUsed;
-    double priceToPayMediumRoomUsed;
-    double masterRoomMeterReading;
-    double masterRoomElectricUsed;
-    double masterToPayMediumRoomUsed;
+    double currentelectricUsedKwh;          // current month electric kwh used
+    double previouselectricUsedKwh;         // previous month electric kwh used
+    double currentBillTotal;                // current total bill
+    double previousBillTotal;               // previous total bill
+    double currentElectricRateCal;          // rate
+    double currentCommonAreaMeter;          // common area meter
+
+    double previoussmallRoomMeterReading;   // previous small room meter reading
+    double currentsmallRoomMeterReading;    // current small room meter reading
+    double previoussmallRoomElectricUsed;   // previous small room electric used
+    double currentsmallRoomElectricUsed;    // current small room electric used
+    double currentpriceToPaySmallRoomUsed;  // current small room amount to pay
+
+    double previousmediumRoomMeterReading;   // previous medium room meter reading
+    double currentmediumRoomMeterReading;    // current medium room meter reading
+    double previousmediumRoomElectricUsed;   // previous medium room electric used
+    double currentmediumRoomElectricUsed;    // current medium room electric used
+    double currentpriceToPayMediumRoomUsed;  // current medium room amount to pay
+
+    double previousmasterRoomMeterReading;   // previous master room meter reading
+    double currentmasterRoomMeterReading;    // current master room meter reading
+    double previousmasterRoomElectricUsed;   // previous master room electric used
+    double currentmasterRoomElectricUsed;    // current master room electric used
+    double currentpriceToPayMasterRoomUsed;  // current master room amount to pay
 
 
 
@@ -152,9 +161,12 @@ public class RentalLogin{
                     currentelectricUsedKwh = Double.parseDouble(currentElecUsedField.getText());
                     currentBillTotal = Double.parseDouble(currentElecBillField.getText());
                     previousBillTotal = Double.parseDouble(previousElecBillField.getText());
-                    smallRoomMeterReading =Double.parseDouble(currentSmallRoomMeterField.getText());
-                    mediumRoomMeterReading=Double.parseDouble(currentMediumRoomMeterField.getText());
-                    masterRoomMeterReading=Double.parseDouble(currentMasterRoomMeterField.getText());
+                    previoussmallRoomMeterReading = Double.parseDouble(previousSmallRoomMeterField.getText());
+                    currentsmallRoomMeterReading =Double.parseDouble(currentSmallRoomMeterField.getText());
+                    previousmediumRoomMeterReading =Double.parseDouble(previousMediumRoomMeterField.getText());
+                    currentmediumRoomMeterReading =Double.parseDouble(currentMediumRoomMeterField.getText());
+                    previousmasterRoomMeterReading =Double.parseDouble(previousMasterRoomMeterField.getText());
+                    currentmasterRoomMeterReading =Double.parseDouble(currentMasterRoomMeterField.getText());
                 } else {
                     // Display an error message if one of the field is not filled or all fields are not filled
                     JOptionPane.showMessageDialog(frame, "Please make sure that all fields are filled.", "Error", JOptionPane.ERROR_MESSAGE);
