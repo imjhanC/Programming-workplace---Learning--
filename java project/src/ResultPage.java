@@ -30,7 +30,7 @@ public class ResultPage{
     JLabel person4 = new JLabel("Jia Han");
 
     public ResultPage(){
-
+        
         JPanel panel = new JPanel();
         panel.setLayout(null);
         frame.add(panel);

@@ -216,6 +216,26 @@ public class ElectricBillCalculator{
         });
     }
 
+    public double getpreviouselectricUsedKwh(double previouselectricUsedKwh){
+        return previouselectricUsedKwh;
+    }
+
+    public double getpreviousBillTotal(double previousBillTotal){
+        return previousBillTotal;
+    }
+
+    public double getprevioussmallRoomMeterReading(double previoussmallRoomMeterReading){
+        return previoussmallRoomMeterReading;
+    }
+
+    public double getpreviousmediumRoomMeterReading(double previousmediumRoomMeterReading){
+        return previousmediumRoomMeterReading;
+    }
+
+    public double getpreviousmasterRoomMeterReading(double previousmasterRoomMeterReading){
+        return previousmasterRoomMeterReading;
+    }
+
     private boolean areAllFieldsFilled() {
         // Check all the text fields for empty values
         return !previousElecUsedField.getText().isEmpty() &&
