@@ -3,12 +3,12 @@ import java.awt.*;
 
 public class ResultPage{
     JFrame frame = new JFrame("Result");
-    JLabel lblprevious1 = new JLabel("Previous Month");
-    JLabel lblprevious2 = new JLabel("Previous Electric Used (Kwh)");
-    JLabel lblprevious3 = new JLabel("Previous Bill in RM");
-    JLabel lblprevious4 = new JLabel("Previous Month Small Room Meter");
-    JLabel lblprevious5 = new JLabel("Previous Month Medium Room Meter");
-    JLabel lblprevious6 = new JLabel("Previous Month Master Room Meter");
+    JLabel lblprevious1 = new JLabel("Previous Month :");
+    JLabel lblprevious2 = new JLabel("Previous Electric Used (Kwh) :");
+    JLabel lblprevious3 = new JLabel("Previous Bill in RM :");
+    JLabel lblprevious4 = new JLabel("Previous Month Small Room Meter :");
+    JLabel lblprevious5 = new JLabel("Previous Month Medium Room Meter :");
+    JLabel lblprevious6 = new JLabel("Previous Month Master Room Meter :");
 
     JLabel lblpreviousElectricUsed = new JLabel();
     JLabel lblpreviousBill = new JLabel();
@@ -29,11 +29,28 @@ public class ResultPage{
     JLabel person4 = new JLabel("Jia Han");
 
     public ResultPage(){
-
+        lblprevious1.setLocation(270,10);
+        lblprevious1.setSize(120,30);
+        lblprevious2.setLocation(20,100);
+        lblprevious2.setSize(210,30);
+        lblprevious3.setLocation(20,200);
+        lblprevious3.setSize(210,30);
+        lblprevious4.setLocation(20,300);
+        lblprevious4.setSize(220,30);
+        lblprevious5.setLocation(20,400);
+        lblprevious5.setSize(250,30);
+        lblprevious6.setLocation(20,500);
+        lblprevious6.setSize(250,30);
         JPanel panel = new JPanel();
         panel.setLayout(null);
+        panel.add(lblprevious1);
+        panel.add(lblprevious2);
+        panel.add(lblprevious3);
+        panel.add(lblprevious4);
+        panel.add(lblprevious5);
+        panel.add(lblprevious6);
         frame.add(panel);
-        frame.setSize(700,500);
+        frame.setSize(1100,1000);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(3);
         frame.setResizable(false);
