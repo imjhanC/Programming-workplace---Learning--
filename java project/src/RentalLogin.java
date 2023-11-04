@@ -167,6 +167,30 @@ public class RentalLogin{
                     currentmediumRoomMeterReading =Double.parseDouble(currentMediumRoomMeterField.getText());
                     previousmasterRoomMeterReading =Double.parseDouble(previousMasterRoomMeterField.getText());
                     currentmasterRoomMeterReading =Double.parseDouble(currentMasterRoomMeterField.getText());
+
+                    if(currentsmallRoomMeterReading > previoussmallRoomMeterReading){
+                        currentsmallRoomElectricUsed = currentsmallRoomMeterReading - previoussmallRoomMeterReading;
+                    }else{
+                        currentsmallRoomElectricUsed = previoussmallRoomMeterReading - currentsmallRoomMeterReading;
+                    }
+
+                    if(currentmediumRoomMeterReading > previousmediumRoomMeterReading){
+                        currentmediumRoomElectricUsed = currentmediumRoomMeterReading - previousmediumRoomMeterReading;
+                    }else{
+                        currentmediumRoomElectricUsed = previousmediumRoomMeterReading - currentmediumRoomMeterReading;
+                    }
+
+                    if(currentmasterRoomMeterReading > previousmasterRoomMeterReading){
+                        currentmasterRoomElectricUsed = currentmasterRoomMeterReading - previousmasterRoomMeterReading;
+                    }else{
+                        currentmasterRoomElectricUsed = previousmasterRoomMeterReading - currentmasterRoomMeterReading;
+                    }
+
+                    currentElectricRateCal = currentBillTotal / currentelectricUsedKwh;
+                    currentCommonAreaMeter = currentelectricUsedKwh - currentsmallRoomElectricUsed - currentmediumRoomElectricUsed -currentmasterRoomElectricUsed;
+                    currentpriceToPaySmallRoomUsed = currentsmallRoomElectricUsed * currentElectricRateCal;
+                    currentpriceToPayMediumRoomUsed =currentmediumRoomElectricUsed * currentElectricRateCal;
+                    currentpriceToPayMasterRoomUsed =currentmasterRoomElectricUsed * currentElectricRateCal;
                 } else {
                     // Display an error message if one of the field is not filled or all fields are not filled
                     JOptionPane.showMessageDialog(frame, "Please make sure that all fields are filled.", "Error", JOptionPane.ERROR_MESSAGE);
