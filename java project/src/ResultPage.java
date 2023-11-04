@@ -3,7 +3,6 @@ import java.awt.*;
 
 public class ResultPage{
     JFrame frame = new JFrame("Result");
-    ElectricBillCalculator billCalculator = new ElectricBillCalculator();
     JLabel lblprevious1 = new JLabel("Previous Month");
     JLabel lblprevious2 = new JLabel("Previous Electric Used (Kwh)");
     JLabel lblprevious3 = new JLabel("Previous Bill in RM");
@@ -30,7 +29,7 @@ public class ResultPage{
     JLabel person4 = new JLabel("Jia Han");
 
     public ResultPage(){
-        
+
         JPanel panel = new JPanel();
         panel.setLayout(null);
         frame.add(panel);
