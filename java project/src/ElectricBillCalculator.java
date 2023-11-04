@@ -2,8 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class RentalLogin{
-    JFrame frame = new JFrame("Rental Bill Calculator ");
+public class ElectricBillCalculator{
+    JFrame frame = new JFrame("Electric Bill Calculator ");
     
     JLabel previousMonthInstruct = new JLabel("Please enter previous month electric bill information here");   // Instruction for previous month
     JTextField previousElecUsedField = new JTextField();                                                            // Textfield for electric used in previous month
@@ -68,7 +68,7 @@ public class RentalLogin{
 
 
 
-    public RentalLogin(){
+    public ElectricBillCalculator(){
         previousMonthInstruct.setLocation(20,5);
         previousMonthInstruct.setSize(340, 40);
         previousElecUsedlbl.setLocation(130, 110);
@@ -231,10 +231,7 @@ public class RentalLogin{
     }
 
     public static void main(String[] args){
-        new RentalLogin();
+        new ElectricBillCalculator();
     }  
     
-    public class resultWindow{
-
-    }
 }
