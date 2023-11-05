@@ -27,8 +27,17 @@ public class ResultPage{
     JLabel person2 = new JLabel("Lucas");
     JLabel person3 = new JLabel("Ching Hong");
     JLabel person4 = new JLabel("Jia Han");
+    double commonareameter;
+    double rate;
+    double smallroompricetoPay;
+    double mediumroompricetoPay;
+    double masterroompricetoPay;
 
     public ResultPage(){
+        ElectricBillCalculator el = new ElectricBillCalculator();
+        commonareameter = el.getcurrentCommonAreaMeter();
+        
+        rate =el.getcurrentElectricRateCal();
         lblprevious1.setLocation(270,10);
         lblprevious1.setSize(120,30);
         lblprevious2.setLocation(20,100);

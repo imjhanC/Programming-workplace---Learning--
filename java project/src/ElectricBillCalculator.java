@@ -191,6 +191,8 @@ public class ElectricBillCalculator{
                     currentpriceToPaySmallRoomUsed = currentsmallRoomElectricUsed * currentElectricRateCal;
                     currentpriceToPayMediumRoomUsed =currentmediumRoomElectricUsed * currentElectricRateCal;
                     currentpriceToPayMasterRoomUsed =currentmasterRoomElectricUsed * currentElectricRateCal;
+                    frame.dispose();
+                    ResultPage pg = new ResultPage();
                 } else {
                     // Display an error message if one of the field is not filled or all fields are not filled
                     JOptionPane.showMessageDialog(frame, "Please make sure that all fields are filled.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -215,24 +217,31 @@ public class ElectricBillCalculator{
             }
         });
     }
+    public double getcurrentCommonAreaMeter(){
+        return currentCommonAreaMeter;
+    }
 
-    public double getpreviouselectricUsedKwh(double previouselectricUsedKwh){
+    public double getcurrentElectricRateCal(){
+        return currentElectricRateCal;
+    }
+
+    public double getpreviouselectricUsedKwh(){
         return previouselectricUsedKwh;
     }
 
-    public double getpreviousBillTotal(double previousBillTotal){
+    public double getpreviousBillTotal(){
         return previousBillTotal;
     }
 
-    public double getprevioussmallRoomMeterReading(double previoussmallRoomMeterReading){
+    public double getprevioussmallRoomMeterReading(){
         return previoussmallRoomMeterReading;
     }
 
-    public double getpreviousmediumRoomMeterReading(double previousmediumRoomMeterReading){
+    public double getpreviousmediumRoomMeterReading(){
         return previousmediumRoomMeterReading;
     }
 
-    public double getpreviousmasterRoomMeterReading(double previousmasterRoomMeterReading){
+    public double getpreviousmasterRoomMeterReading(){
         return previousmasterRoomMeterReading;
     }
 
@@ -252,6 +261,6 @@ public class ElectricBillCalculator{
 
     public static void main(String[] args){
         new ElectricBillCalculator();
-    }  
+    }
     
 }
