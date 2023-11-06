@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.text.DecimalFormat;
 
 public class ResultPage{
+    DecimalFormat decimalFormat = new DecimalFormat("#.##");
     JFrame frame = new JFrame("Result");
     JLabel lblprevious1 = new JLabel("Previous Month :");
     JLabel lblprevious2 = new JLabel("Previous Electric Used (Kwh) :");
@@ -161,11 +163,17 @@ public class ResultPage{
         lblcurrentSmallRoomMeter.setText(String.valueOf(rt.getcurrentsmallRoomMeterReading()));
         lblcurrentMediumRoomMeter.setText(String.valueOf(rt.getcurrentmediumRoomMeterReading()));
         lblcurrentMasterRoomMeter.setText(String.valueOf(rt.getcurrentmasterRoomMeterReading()));
+        double currentCommonAreaMeter = rt.getcurrentCommonAreaMeter()*rt.getcurrentElectricRateCal()/4;
+        person1pay = (rt.getcurrentpriceToPayMasterRoomUsed()/2) + currentCommonAreaMeter;
+        person2pay = (rt.getcurrentpriceToPayMasterRoomUsed()/2) + currentCommonAreaMeter;
+        person3pay = rt.getcurrentpriceToPaySmallRoomUsed() +currentCommonAreaMeter;
+        person4pay = rt.getcurrentpriceToPayMediumRoomUsed() + currentCommonAreaMeter;
 
-        person1pay = (rt.getcurrentpriceToPayMasterRoomUsed()/2) +rt.getcurrentCommonAreaMeter();
-        person2pay = (rt.getcurrentpriceToPayMasterRoomUsed()/2) +rt.getcurrentCommonAreaMeter();
-        person3pay = rt.getcurrentpriceToPaySmallRoomUsed() +rt.getcurrentCommonAreaMeter();
-        person4pay = rt.getcurrentpriceToPayMediumRoomUsed() +rt.getcurrentCommonAreaMeter();
+        person1pay = Double.parseDouble(decimalFormat.format(person1pay));
+        person2pay = Double.parseDouble(decimalFormat.format(person2pay));
+        person3pay = Double.parseDouble(decimalFormat.format(person3pay));
+        person4pay = Double.parseDouble(decimalFormat.format(person4pay));
+        
         person1lbl.setText(String.valueOf(person1pay));
         person2lbl.setText(String.valueOf(person2pay));
         person3lbl.setText(String.valueOf(person3pay));

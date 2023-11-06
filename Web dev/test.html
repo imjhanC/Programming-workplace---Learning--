@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #speedometer {
+      width: 200px;
+      height: 200px;
+      border: 10px solid #333;
+      border-radius: 50%;
+      position: relative;
+    }
+    #needle {
+      width: 2px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      top: 50px;
+      left: 99px;
+      transform-origin: center bottom;
+      transform: rotate(0deg);
+    }
+    #odometer {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="speedometer">
+    <div id="needle"></div>
+  </div>
+  <div id="odometer">
+    Odometer: 0.00 km
+  </div>
+
+  <script>
+    // Variables to store speed and odometer value
+    let speed = 0;
+    let odometer = parseFloat(localStorage.getItem("odometer") || "0.00");
+
+    // Function to update the speedometer and odometer
+    function updateDisplay() {
+      document.getElementById("needle").style.transform = `rotate(${speed * 1.8}deg)`;
+      document.getElementById("odometer").textContent = `Odometer: ${odometer.toFixed(2)} km`;
+    }
+
+    // Simulate GPS speed updates (for demonstration purposes)
+    setInterval(() => {
+      speed += Math.random() * 5 - 2.5; // Simulate speed changes
+      if (speed < 0) speed = 0;
+      odometer += speed / 3600; // Update odometer value
+      updateDisplay();
+    }, 1000);
+
+    // Save odometer value to local storage
+    window.addEventListener("beforeunload", () => {
+      localStorage.setItem("odometer", odometer.toFixed(2));
+    });
+
+    // Initial display update
+    updateDisplay();
+  </script>
+</body>
+</html>

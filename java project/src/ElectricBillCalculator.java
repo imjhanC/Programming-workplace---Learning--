@@ -9,7 +9,7 @@ public class ElectricBillCalculator{
     JTextField previousElecUsedField = new JTextField();                                                            // Textfield for electric used in previous month
     JTextField previousElecBillField = new JTextField();                                                            // TextField for electric bill in RM in previous month
     JLabel previousElecUsedlbl = new JLabel("Previous Electric Used (kWH)");                                   // Previous month electricity used  label 
-    JLabel previousElecBilllbl = new JLabel("Previous Electric Bill in RM");                                   // Previous month elctric bill in RM label
+    JLabel previousElecBilllbl = new JLabel("Previous Electric Bill in RM");                                   // Previous month electric bill in RM label
     
 
     JTextField previousSmallRoomMeterField = new JTextField();                                                      // TextField for small room electricity used in previous month
