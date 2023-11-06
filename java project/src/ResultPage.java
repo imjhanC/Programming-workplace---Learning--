@@ -17,23 +17,38 @@ public class ResultPage{
     JLabel lblpreviousMasterRoomMeter = new JLabel();
 
 
-    JLabel lblcurrent1 = new JLabel("Current Month");
-    JLabel lblcurrent2 = new JLabel("Current Electric Used");
-    JLabel lblcurrent3 = new JLabel("Current Bill in RM");
-    JLabel lblcurrent4 = new JLabel("Current Month Small Room Meter");
-    JLabel lblcurrent5 = new JLabel("Current Month Medium Room Meter");
-    JLabel lblcurrent6 = new JLabel("Current Month Master Room Meter");
-    JLabel person1 = new JLabel("Linus");
-    JLabel person2 = new JLabel("Lucas");
-    JLabel person3 = new JLabel("Ching Hong");
-    JLabel person4 = new JLabel("Jia Han");
-    double commonareameter;
-    double rate;
-    double smallroompricetoPay;
-    double mediumroompricetoPay;
-    double masterroompricetoPay;
+    JLabel lblcurrent1 = new JLabel("Current Month :");
+    JLabel lblcurrent2 = new JLabel("Current Electric Used (Kwh) :");
+    JLabel lblcurrent3 = new JLabel("Current Bill in RM :");
+    JLabel lblcurrent4 = new JLabel("Current Month Small Room Meter :");
+    JLabel lblcurrent5 = new JLabel("Current Month Medium Room Meter :");
+    JLabel lblcurrent6 = new JLabel("Current Month Master Room Meter :");
+    JLabel person1 = new JLabel("Linus :");
+    JLabel person2 = new JLabel("Lucas :");
+    JLabel person3 = new JLabel("Ching Hong :");
+    JLabel person4 = new JLabel("Jia Han :");
+    
+    JLabel lblcurrentElectricUsed = new JLabel();
+    JLabel lblcurrentBill = new JLabel();
+    JLabel lblcurrentSmallRoomMeter = new JLabel();
+    JLabel lblcurrentMediumRoomMeter= new JLabel();
+    JLabel lblcurrentMasterRoomMeter = new JLabel();
 
+    JLabel person1lbl = new JLabel();
+    JLabel person2lbl = new JLabel();
+    JLabel person3lbl = new JLabel();
+    JLabel person4lbl = new JLabel();
+
+    double person1pay;
+    double person2pay;
+    double person3pay;
+    double person4pay;
+    
     public ResultPage(){
+        person1lbl.setText(String.valueOf(person1pay));
+        person2lbl.setText(String.valueOf(person2pay));
+        person3lbl.setText(String.valueOf(person3pay));
+        person4lbl.setText(String.valueOf(person4pay));
         lblprevious1.setLocation(270,10);
         lblprevious1.setSize(120,30);
         lblprevious2.setLocation(20,100);
@@ -46,6 +61,34 @@ public class ResultPage{
         lblprevious5.setSize(250,30);
         lblprevious6.setLocation(20,500);
         lblprevious6.setSize(250,30);
+        lblcurrent1.setLocation(750,10);
+        lblcurrent1.setSize(120,30);
+        lblcurrent2.setLocation(500,100);
+        lblcurrent2.setSize(170,30);
+        lblcurrent3.setLocation(500,200);
+        lblcurrent3.setSize(120,30);
+        lblcurrent4.setLocation(500,300);
+        lblcurrent4.setSize(200,30);
+        lblcurrent5.setLocation(500,400);
+        lblcurrent5.setSize(250,30);
+        lblcurrent6.setLocation(500,500);
+        lblcurrent6.setSize(250,30);
+        person1.setLocation(500,550);
+        person1.setSize(210,30);
+        person2.setLocation(500,600);
+        person2.setSize(210,30);
+        person3.setLocation(500,650);
+        person3.setSize(210,30);
+        person4.setLocation(500,700);
+        person4.setSize(210,30);
+        person1lbl.setLocation(800,550);
+        person1lbl.setSize(210,30);
+        person2lbl.setLocation(800,600);
+        person2lbl.setSize(210,30);
+        person3lbl.setLocation(800,650);
+        person3lbl.setSize(210,30);
+        person4lbl.setLocation(800,700);
+        person4lbl.setSize(210,30);
 
         lblpreviousElectricUsed.setLocation(300,100);
         lblpreviousElectricUsed.setSize(120,30);
@@ -57,6 +100,18 @@ public class ResultPage{
         lblpreviousMediumRoomMeter.setSize(120,30);
         lblpreviousMasterRoomMeter.setLocation(300,500);
         lblpreviousMasterRoomMeter.setSize(120,30);
+
+        lblcurrentElectricUsed.setLocation(800,100);
+        lblcurrentElectricUsed.setSize(120,30);
+        lblcurrentBill.setLocation(800,200);
+        lblcurrentBill.setSize(120,30);
+        lblcurrentSmallRoomMeter.setLocation(800,300);
+        lblcurrentSmallRoomMeter.setSize(120,30);
+        lblcurrentMediumRoomMeter.setLocation(800,400);
+        lblcurrentMediumRoomMeter.setSize(120,30);
+        lblcurrentMasterRoomMeter.setLocation(800,500);
+        lblcurrentMasterRoomMeter.setSize(120,30);
+        
         JPanel panel = new JPanel();
         panel.setLayout(null);
         panel.add(lblprevious1);
@@ -70,6 +125,25 @@ public class ResultPage{
         panel.add(lblpreviousSmallRoomMeter);
         panel.add(lblpreviousMediumRoomMeter);
         panel.add(lblpreviousMasterRoomMeter);
+        panel.add(lblcurrent1);
+        panel.add(lblcurrent2);
+        panel.add(lblcurrent3);
+        panel.add(lblcurrent4);
+        panel.add(lblcurrent5);
+        panel.add(lblcurrent6);
+        panel.add(person1);
+        panel.add(person2);
+        panel.add(person3);
+        panel.add(person4);
+        panel.add(lblcurrentElectricUsed);
+        panel.add(lblcurrentBill);
+        panel.add(lblcurrentSmallRoomMeter);
+        panel.add(lblcurrentMediumRoomMeter);
+        panel.add(lblcurrentMasterRoomMeter);
+        panel.add(person1lbl);
+        panel.add(person2lbl);
+        panel.add(person3lbl);
+        panel.add(person4lbl);
         frame.add(panel);
         frame.setSize(1100,1000);
         frame.setVisible(true);
@@ -84,6 +158,17 @@ public class ResultPage{
         lblpreviousSmallRoomMeter.setText(String.valueOf(rt.getprevioussmallRoomMeterReading()));
         lblpreviousMediumRoomMeter.setText(String.valueOf(rt.getpreviousmediumRoomMeterReading()));
         lblpreviousMasterRoomMeter.setText(String.valueOf(rt.getpreviousmasterRoomMeterReading()));
+
+        lblcurrentElectricUsed.setText(String.valueOf(rt.getcurrentelectricUsedKwh()));
+        lblcurrentBill.setText(String.valueOf(rt.getcurrentBillTotal()));
+        lblcurrentSmallRoomMeter.setText(String.valueOf(rt.getcurrentsmallRoomMeterReading()));
+        lblcurrentMediumRoomMeter.setText(String.valueOf(rt.getcurrentmediumRoomMeterReading()));
+        lblcurrentMasterRoomMeter.setText(String.valueOf(rt.getcurrentmasterRoomMeterReading()));
+
+        person1pay = (rt.getcurrentpriceToPayMasterRoomUsed()/2) +rt.getcurrentCommonAreaMeter();
+        person2pay = (rt.getcurrentpriceToPayMasterRoomUsed()/2) +rt.getcurrentCommonAreaMeter();
+        person3pay = rt.getcurrentpriceToPaySmallRoomUsed() +rt.getcurrentCommonAreaMeter();
+        person4pay = rt.getcurrentpriceToPayMediumRoomUsed() +rt.getcurrentCommonAreaMeter();
     }
     public static void main(String[] args) {
         new ResultPage();
