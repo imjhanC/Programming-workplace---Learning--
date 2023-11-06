@@ -45,10 +45,7 @@ public class ResultPage{
     double person4pay;
     
     public ResultPage(){
-        person1lbl.setText(String.valueOf(person1pay));
-        person2lbl.setText(String.valueOf(person2pay));
-        person3lbl.setText(String.valueOf(person3pay));
-        person4lbl.setText(String.valueOf(person4pay));
+        
         lblprevious1.setLocation(270,10);
         lblprevious1.setSize(120,30);
         lblprevious2.setLocation(20,100);
@@ -169,6 +166,10 @@ public class ResultPage{
         person2pay = (rt.getcurrentpriceToPayMasterRoomUsed()/2) +rt.getcurrentCommonAreaMeter();
         person3pay = rt.getcurrentpriceToPaySmallRoomUsed() +rt.getcurrentCommonAreaMeter();
         person4pay = rt.getcurrentpriceToPayMediumRoomUsed() +rt.getcurrentCommonAreaMeter();
+        person1lbl.setText(String.valueOf(person1pay));
+        person2lbl.setText(String.valueOf(person2pay));
+        person3lbl.setText(String.valueOf(person3pay));
+        person4lbl.setText(String.valueOf(person4pay));
     }
     public static void main(String[] args) {
         new ResultPage();
