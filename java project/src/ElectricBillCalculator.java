@@ -41,7 +41,7 @@ public class ElectricBillCalculator{
     JButton clearAllButton = new JButton("Clear All");                                                         // Clear Button
     JButton resultButton = new JButton("Result");                                                              // Result Button
 
-    double currentelectricUsedKwh;          // current month electric kwh used
+    /*double currentelectricUsedKwh;          // current month electric kwh used
     double previouselectricUsedKwh;         // previous month electric kwh used
     double currentBillTotal;                // current total bill
     double previousBillTotal;               // previous total bill
@@ -64,7 +64,7 @@ public class ElectricBillCalculator{
     double currentmasterRoomMeterReading;    // current master room meter reading
     double previousmasterRoomElectricUsed;   // previous master room electric used
     double currentmasterRoomElectricUsed;    // current master room electric used
-    double currentpriceToPayMasterRoomUsed;  // current master room amount to pay
+    double currentpriceToPayMasterRoomUsed;  // current master room amount to pay*/
 
 
 
@@ -157,40 +157,42 @@ public class ElectricBillCalculator{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (areAllFieldsFilled()) {
-                    previouselectricUsedKwh = Double.parseDouble(previousElecUsedField.getText());
-                    currentelectricUsedKwh = Double.parseDouble(currentElecUsedField.getText());
-                    currentBillTotal = Double.parseDouble(currentElecBillField.getText());
-                    previousBillTotal = Double.parseDouble(previousElecBillField.getText());
-                    previoussmallRoomMeterReading = Double.parseDouble(previousSmallRoomMeterField.getText());
-                    currentsmallRoomMeterReading =Double.parseDouble(currentSmallRoomMeterField.getText());
-                    previousmediumRoomMeterReading =Double.parseDouble(previousMediumRoomMeterField.getText());
-                    currentmediumRoomMeterReading =Double.parseDouble(currentMediumRoomMeterField.getText());
-                    previousmasterRoomMeterReading =Double.parseDouble(previousMasterRoomMeterField.getText());
-                    currentmasterRoomMeterReading =Double.parseDouble(currentMasterRoomMeterField.getText());
-
-                    if(currentsmallRoomMeterReading > previoussmallRoomMeterReading){
-                        currentsmallRoomElectricUsed = currentsmallRoomMeterReading - previoussmallRoomMeterReading;
+                    Result rt = new Result();
+                    rt.setpreviouselectricUsedKwh(Double .parseDouble(previousElecBillField.getText())); 
+                    rt.setcurrentelectricUsedKwh(Double.parseDouble(currentElecUsedField.getText()));
+                    rt.setcurrentBillTotal(Double.parseDouble(currentElecBillField.getText()));
+                    rt.setpreviousBillTotal(Double.parseDouble(previousElecBillField.getText()));
+                    rt.setprevioussmallRoomMeterReading(Double.parseDouble(previousSmallRoomMeterField.getText()));
+                    rt.setcurrentsmallRoomMeterReading(Double.parseDouble(currentSmallRoomMeterField.getText()));
+                    rt.setpreviousmediumRoomMeterReading(Double.parseDouble(previousMediumRoomMeterField.getText()));
+                    rt.setcurrentmediumRoomMeterReading(Double.parseDouble(currentMediumRoomMeterField.getText()));
+                    rt.setpreviousmasterRoomMeterReading(Double.parseDouble(previousMasterRoomMeterField.getText()));
+                    rt.setcurrentmasterRoomMeterReading(Double.parseDouble(currentMasterRoomMeterField.getText()));
+                    
+                    
+                    if(rt.getcurrentsmallRoomMeterReading() > rt.getprevioussmallRoomMeterReading()){
+                        rt.setcurrentsmallRoomElectricUsed(rt.getcurrentsmallRoomMeterReading() - rt.getprevioussmallRoomMeterReading());
                     }else{
-                        currentsmallRoomElectricUsed = previoussmallRoomMeterReading - currentsmallRoomMeterReading;
+                        rt.setcurrentsmallRoomElectricUsed(rt.getprevioussmallRoomMeterReading()- rt.getcurrentsmallRoomMeterReading());
                     }
 
-                    if(currentmediumRoomMeterReading > previousmediumRoomMeterReading){
-                        currentmediumRoomElectricUsed = currentmediumRoomMeterReading - previousmediumRoomMeterReading;
+                    if(rt.getcurrentmediumRoomMeterReading() > rt.getpreviousmediumRoomMeterReading()){
+                        rt.setcurrentmediumRoomElectricUsed(rt.getcurrentmediumRoomMeterReading() - rt.getpreviousmediumRoomMeterReading());
                     }else{
-                        currentmediumRoomElectricUsed = previousmediumRoomMeterReading - currentmediumRoomMeterReading;
+                        rt.setcurrentmediumRoomElectricUsed(rt.getpreviousmediumRoomMeterReading()- rt.getcurrentmediumRoomMeterReading());
                     }
 
-                    if(currentmasterRoomMeterReading > previousmasterRoomMeterReading){
-                        currentmasterRoomElectricUsed = currentmasterRoomMeterReading - previousmasterRoomMeterReading;
+                    if(rt.getcurrentmasterRoomMeterReading() > rt.getpreviousmasterRoomMeterReading()){
+                        rt.setcurrentmasterRoomElectricUsed(rt.getcurrentmasterRoomMeterReading() - rt.getpreviousmasterRoomMeterReading());
                     }else{
-                        currentmasterRoomElectricUsed = previousmasterRoomMeterReading - currentmasterRoomMeterReading;
+                        rt.setcurrentmasterRoomElectricUsed(rt.getpreviousmasterRoomMeterReading()- rt.getcurrentmasterRoomMeterReading());
                     }
 
-                    currentElectricRateCal = currentBillTotal / currentelectricUsedKwh;
-                    currentCommonAreaMeter = currentelectricUsedKwh - currentsmallRoomElectricUsed - currentmediumRoomElectricUsed -currentmasterRoomElectricUsed;
-                    currentpriceToPaySmallRoomUsed = currentsmallRoomElectricUsed * currentElectricRateCal;
-                    currentpriceToPayMediumRoomUsed =currentmediumRoomElectricUsed * currentElectricRateCal;
-                    currentpriceToPayMasterRoomUsed =currentmasterRoomElectricUsed * currentElectricRateCal;
+                    rt.setcurrentElectricRateCal(rt.getcurrentBillTotal() / rt.getcurrentelectricUsedKwh());
+                    rt.setcurrentCommonAreaMeter(rt.getcurrentelectricUsedKwh()-rt.getcurrentsmallRoomElectricUsed()-rt.getcurrentmediumRoomElectricUsed()-rt.getcurrentmasterRoomElectricUsed());
+                    rt.setcurrentpriceToPaySmallRoomUsed(rt.getcurrentsmallRoomElectricUsed()*rt.getcurrentElectricRateCal());
+                    rt.setcurrentpriceToPayMediumRoomUsed(rt.getcurrentmediumRoomElectricUsed()*rt.getcurrentElectricRateCal());    
+                    rt.setcurrentpriceToPayMasterRoomUsed(rt.getcurrentmasterRoomElectricUsed()*rt.getcurrentElectricRateCal()); 
                     frame.dispose();
                     ResultPage pg = new ResultPage();
                 } else {
