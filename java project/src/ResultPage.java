@@ -34,10 +34,12 @@ public class ResultPage{
     double masterroompricetoPay;
 
     public ResultPage(){
-        ElectricBillCalculator el = new ElectricBillCalculator();
-        commonareameter = el.getcurrentCommonAreaMeter();
-        
-        rate =el.getcurrentElectricRateCal();
+        Result rt = new Result();
+        lblpreviousElectricUsed.setText(String.valueOf(rt.getpreviouselectricUsedKwh()));
+        lblpreviousBill.setText(String.valueOf(rt.getpreviousBillTotal()));
+        lblpreviousSmallRoomMeter.setText(String.valueOf(rt.getprevioussmallRoomMeterReading()));
+        lblpreviousMediumRoomMeter.setText(String.valueOf(rt.getpreviousmediumRoomMeterReading()));
+        lblpreviousMasterRoomMeter.setText(String.valueOf(rt.getpreviousmasterRoomMeterReading()));
         lblprevious1.setLocation(270,10);
         lblprevious1.setSize(120,30);
         lblprevious2.setLocation(20,100);
@@ -50,6 +52,17 @@ public class ResultPage{
         lblprevious5.setSize(250,30);
         lblprevious6.setLocation(20,500);
         lblprevious6.setSize(250,30);
+
+        lblpreviousElectricUsed.setLocation(300,100);
+        lblpreviousElectricUsed.setSize(120,30);
+        lblpreviousBill.setLocation(300,200);
+        lblpreviousBill.setSize(120,30);
+        lblpreviousSmallRoomMeter.setLocation(300,300);
+        lblpreviousSmallRoomMeter.setSize(120,30);
+        lblpreviousMediumRoomMeter.setLocation(300,400);
+        lblpreviousMediumRoomMeter.setSize(120,30);
+        lblpreviousMasterRoomMeter.setLocation(300,500);
+        lblpreviousMasterRoomMeter.setSize(120,30);
         JPanel panel = new JPanel();
         panel.setLayout(null);
         panel.add(lblprevious1);
@@ -58,6 +71,11 @@ public class ResultPage{
         panel.add(lblprevious4);
         panel.add(lblprevious5);
         panel.add(lblprevious6);
+        panel.add(lblpreviousElectricUsed);
+        panel.add(lblpreviousBill);
+        panel.add(lblpreviousSmallRoomMeter);
+        panel.add(lblpreviousMediumRoomMeter);
+        panel.add(lblpreviousMasterRoomMeter);
         frame.add(panel);
         frame.setSize(1100,1000);
         frame.setVisible(true);
