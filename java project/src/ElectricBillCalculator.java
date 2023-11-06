@@ -195,6 +195,7 @@ public class ElectricBillCalculator{
                     rt.setcurrentpriceToPayMasterRoomUsed(rt.getcurrentmasterRoomElectricUsed()*rt.getcurrentElectricRateCal()); 
                     frame.dispose();
                     ResultPage pg = new ResultPage();
+                    pg.setResult(rt);
                 } else {
                     // Display an error message if one of the field is not filled or all fields are not filled
                     JOptionPane.showMessageDialog(frame, "Please make sure that all fields are filled.", "Error", JOptionPane.ERROR_MESSAGE);

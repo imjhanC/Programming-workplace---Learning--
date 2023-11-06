@@ -34,12 +34,6 @@ public class ResultPage{
     double masterroompricetoPay;
 
     public ResultPage(){
-        Result rt = new Result();
-        lblpreviousElectricUsed.setText(String.valueOf(rt.getpreviouselectricUsedKwh()));
-        lblpreviousBill.setText(String.valueOf(rt.getpreviousBillTotal()));
-        lblpreviousSmallRoomMeter.setText(String.valueOf(rt.getprevioussmallRoomMeterReading()));
-        lblpreviousMediumRoomMeter.setText(String.valueOf(rt.getpreviousmediumRoomMeterReading()));
-        lblpreviousMasterRoomMeter.setText(String.valueOf(rt.getpreviousmasterRoomMeterReading()));
         lblprevious1.setLocation(270,10);
         lblprevious1.setSize(120,30);
         lblprevious2.setLocation(20,100);
@@ -84,6 +78,13 @@ public class ResultPage{
         frame.setLocationRelativeTo(null);
     }
 
+    public void setResult(Result rt){
+        lblpreviousElectricUsed.setText(String.valueOf(rt.getpreviouselectricUsedKwh()));
+        lblpreviousBill.setText(String.valueOf(rt.getpreviousBillTotal()));
+        lblpreviousSmallRoomMeter.setText(String.valueOf(rt.getprevioussmallRoomMeterReading()));
+        lblpreviousMediumRoomMeter.setText(String.valueOf(rt.getpreviousmediumRoomMeterReading()));
+        lblpreviousMasterRoomMeter.setText(String.valueOf(rt.getpreviousmasterRoomMeterReading()));
+    }
     public static void main(String[] args) {
         new ResultPage();
     }
