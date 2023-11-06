@@ -217,34 +217,7 @@ public class ElectricBillCalculator{
             }
         });
     }
-    public double getcurrentCommonAreaMeter(){
-        return currentCommonAreaMeter;
-    }
-
-    public double getcurrentElectricRateCal(){
-        return currentElectricRateCal;
-    }
-
-    public double getpreviouselectricUsedKwh(){
-        return previouselectricUsedKwh;
-    }
-
-    public double getpreviousBillTotal(){
-        return previousBillTotal;
-    }
-
-    public double getprevioussmallRoomMeterReading(){
-        return previoussmallRoomMeterReading;
-    }
-
-    public double getpreviousmediumRoomMeterReading(){
-        return previousmediumRoomMeterReading;
-    }
-
-    public double getpreviousmasterRoomMeterReading(){
-        return previousmasterRoomMeterReading;
-    }
-
+    
     private boolean areAllFieldsFilled() {
         // Check all the text fields for empty values
         return !previousElecUsedField.getText().isEmpty() &&
@@ -259,8 +232,7 @@ public class ElectricBillCalculator{
                !currentMasterRoomMeterField.getText().isEmpty();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         new ElectricBillCalculator();
     }
-    
 }
