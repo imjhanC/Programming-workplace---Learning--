@@ -1,0 +1,12 @@
+h1{
+    color: pink;
+    border-style: solid;
+    border-width: 3px;
+    border-color: chartreuse;
+    border-radius:5px;
+}
+
+p{
+    color:red;
+    border-bottom: 3px solid rgb(252, 28, 28);
+}
