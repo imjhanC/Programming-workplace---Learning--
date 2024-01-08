@@ -1,0 +1,65 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    color:white;
+}
+  
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header{
+    text-align: left;
+    padding:20px;
+    background-color: grey; /* Adjust the alpha value (0.5) for transparency */
+    position: relative;
+}
+header h1{
+    font-size: 24px;
+    color: rgb(5,190,232);
+    font-family: 'Oswald', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    font-family: 'Oswald', sans-serif; /* Applying the Oswald font */
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative; /* Ensuring relative positioning for the header */
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Positioning the links */
+.button {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+/* Styling for the links */
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease;
+}

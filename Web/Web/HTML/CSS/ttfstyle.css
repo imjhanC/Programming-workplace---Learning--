@@ -1,0 +1,11 @@
+@font-face {
+    src: url(Web\Web\HTML\CSS\TTFfont\BungeeSpice-Regular.ttf);
+    font-family: Bungee-Spice;
+}
+
+h1{
+    font-family: Bungee-Spice,Verdana, Geneva, Tahoma, sans-serif;
+}
+p{
+    font-family: Bungee-Spice;
+}
