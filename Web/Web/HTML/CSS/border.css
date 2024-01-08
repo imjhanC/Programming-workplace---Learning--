@@ -9,4 +9,8 @@ h1{
 p{
     color:red;
     border-bottom: 3px solid rgb(252, 28, 28);
+    border-left: 3px dotted rgb(10, 202, 231);
+    border-right: 3px dotted rgb(80, 120,100);
+    border-top: 3px solid rgb(250,120,60);
+    border-radius: 20px;
 }
