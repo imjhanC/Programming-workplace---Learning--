@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+}
+
+h1{
+    color:aqua;
+}
+
+/*#p1{
+    color: #1989eb;
+}
+
+#p2{
+    color: aquamarine;
+}
+
+#p3{
+    color:aqua;
+}
+
+#p4{
+    color:pink;
+}
+
+#p5{
+    color:azure;
+}
+*/
+
+.odd{
+    color: blue;
+}
+
+.even{
+    color:aqua;
+}
