@@ -3,7 +3,6 @@ body, html {
     padding: 0;
     overflow: hidden;
     background-color: black;
-    color:white;
 }
   
 canvas {
@@ -16,50 +15,40 @@ canvas {
 header{
     text-align: left;
     padding:20px;
-    background-color: grey; /* Adjust the alpha value (0.5) for transparency */
+    /*background-color: grey;*/ /* Adjust the alpha value (0.5) for transparency */
     position: relative;
 }
 header h1{
-    font-size: 24px;
-    color: rgb(5,190,232);
+    position: relative;
+    font-size: 40px;
+    color: #1a171b;
     font-family: 'Oswald', sans-serif;
+    -webkit-text-stroke: 0.2vw #461338;
+    text-transform: uppercase;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: black;
-    color: white;
-    font-family: 'Oswald', sans-serif; /* Applying the Oswald font */
-}
-
-header {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: relative; /* Ensuring relative positioning for the header */
-}
-
-header h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-/* Positioning the links */
-.button {
+header h1::before{
+    content: attr(data-text);
     position: absolute;
-    top: 10px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-    text-decoration: none;
-    color: white;
-    padding: 8px 12px;
-    border: 1px solid white;
-    border-radius: 5px;
+    width: 100%;
+    top:0;
+    left: 0;
+    height: 100%;
+    color: #ff9d00;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 0.5px solid #00f7ff;
+    overflow: hidden;
+    animation: animate 2s linear infinite;
 }
 
-/* Styling for the links */
-.button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transition: background-color 0.3s ease;
+@keyframes animate{
+    0%,20%,30%,50%,100%{
+        width: 0;
+    }
+
+    70%,90%{
+        width: 25%;
+    }
 }
+
+
