@@ -3,15 +3,69 @@ body, html {
     padding: 0;
     overflow: hidden;
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-  
+
 canvas {
+    pointer-events: none;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
 }
 
+h1 {
+    color: #f5d442;
+    font-family: 'Righteous', sans-serif;
+    font-size: 40px;
+    margin-left: 50px;
+}
 
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 800px; /* Creates space between heading and buttons */
+}
 
+.buttons {
+    margin-left: 400px; /* Adjust the margin for the desired space */
+}
 
+.button{
+    font-family: 'Abril Fatface', serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    margin-right: 20px; /* Adjust as needed for button spacing */
+    position: relative;
+    display: inline-flex;
+    padding: 10px 30px;
+    background: #363636;
+    letter-spacing: 1px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.button span{
+    position: relative;
+    z-index: 2;
+}
+.button::before{
+    content: '';
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #2196f3;
+    transition: width 0.5s,height 0.5s;
+}
+
+.button:hover::before{
+    width: 500px;
+    height: 500px;
+}

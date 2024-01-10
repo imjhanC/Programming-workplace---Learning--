@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
+
         <title>Welcome to my Page!</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     </head> 
     <body>
+        <div class="container">
+            <div class="header">
+                <h1>Jhan's Page</h1>
+                <div class="buttons">
+                <a href="#" class="button"><span>About Me</span></a>
+                <a href="#" class="button"><span>My Project</span></a>
+                <a href="#" class="button"><span>Technology Skill</span></a>
+                <a href="#" class="button"><span>Contact Me</span></a>
+                <script>
+                    const btn =document.querySelector('.button');
+                    btn.onclick = function(e){
+                        const x =e.pageX -btn.offsetLeft;
+                        const y =e.pageY -btn.offsetTop;
+
+                        btn.style.setProperty('--x',x+'px');
+                        btn.style.setProperty('--y',y+'px');
+                    }
+                </script>
+            </div>
+        </div>
         <canvas id="waveCanvas"></canvas>
         <script src="script.js"></script>
     </body>
