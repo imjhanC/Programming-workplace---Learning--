@@ -23,7 +23,7 @@ class Particle {
   }
 
   draw() {
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = 'orange';
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
