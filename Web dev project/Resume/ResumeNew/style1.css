@@ -30,6 +30,7 @@ header .navigation{
     position: relative;
 }
 
+
 header .navigation .navigation-items a{
     position: relative;
     color: #ffffff;
@@ -92,27 +93,64 @@ section{
 }
 
 .home .content h1{
-    font-size:4;
+    font-size:40px;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 5px;
     line-height: 75px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 170px;
+    font-family: 'Source Code Pro', monospace;
+    white-space: pre;
 }
 
-.home .content h1 span{
+.typewriter{
+    position: relative;
+}
+
+.typewriter::after{
+    content: '_';
+    position: absolute;
+    right: 0;
+    color: red;
+    background-color:rgba(3,96,251,0);
+    width: 100%;
+    animation: typing 3s steps(22) alternate-reverse infinite;
+                /*line 1s infinite;*/
+}
+
+@keyframes typing{
+    to{
+        width: 0%;
+    }
+}
+
+@keyframes line{
+    50%{
+        color: transparent;
+    }
+}
+
+/*.home .content h1 span{
     font-size: 1.2em;
     font-weight: 600;
-}
+    font-family: 'Source Code Pro', monospace;
+}*/
 
 .home .content p{
     margin-bottom: 65px;
+    font-size: 30px;
+    color: white;
+    margin-left: 170px;
+    letter-spacing: 3px;
+    font-family: 'Lilita One', sans-serif;
 }
 
 .home .content a{
     background: #ffffff;
     padding: 15px 35px;
-    color: #1680AC;
+    color: #02caf7;
     font-size: 1.1em;
     font-weight: 500;
     text-decoration: none;
