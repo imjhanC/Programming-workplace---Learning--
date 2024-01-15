@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
 
 *{
     margin: 0;
@@ -51,7 +53,8 @@ a:hover{
 }
 
 .logo{
-    font-size: 2rem;
+    font-size: 3rem;
+    font-family: 'Satisfy', cursive;
 }
 
 .logo:hover{
@@ -180,7 +183,8 @@ section{
 .section__text__p2{
     font-size: 1.75rem;
     margin-bottom: 1rem;
-
+    font-family: 'Anonymous Pro', monospace;
+    
 }
 
 .title{
@@ -220,17 +224,22 @@ section{
     border: rgb(53, 53, 53) 0.1rem solid;
 }
 
+.btn-color-1{
+    color: white;
+    background: rgb(82, 82, 82);
+}
+
 .btn-color-1:hover, .btn-color-2:hover{
     cursor: pointer;
 }
 
 .btn-color-1:hover, .btn-color-2:hover{
-    background: rgb(53,53,53);
+    background: rgb(53, 53, 53);
     color: white;
 }
 
 .btn-color-1:hover{
-    background: rgb(0,0,0);
+    background: black;
 }
 
 .btn-color-2{
@@ -326,7 +335,7 @@ section{
 article{
     display: flex;
     width: 10rem;
-    justify-content: space-around;
+    justify-content: center;
     gap: 0.5rem;
 }
 
