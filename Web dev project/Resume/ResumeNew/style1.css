@@ -109,6 +109,16 @@ section{
     position: relative;
 }
 
+h2{
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
 .typewriter::after{
     content: '_';
     position: absolute;
@@ -139,7 +149,7 @@ section{
 }*/
 
 .home .content p{
-    margin-bottom: 65px;
+    margin-bottom: 230px;
     font-size: 30px;
     color: white;
     margin-left: 170px;
@@ -197,7 +207,7 @@ section{
     justify-content: center;
     align-items: center;
     transform: translateY(80px);
-    margin-bottom: 12px;
+    margin-bottom: 5px;
 }
 
 .slider-navigation .nav-btn{
@@ -252,3 +262,4 @@ section{
     }
 
 }
+
